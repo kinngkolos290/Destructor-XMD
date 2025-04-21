@@ -1,1 +1,7 @@
 "homepage": "https://ton-user.github.io/Destructor-XMD"
+npm install gh-pages --save-dev
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+npm install gh-pages --save-dev
