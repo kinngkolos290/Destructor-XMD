@@ -1,4 +1,3 @@
-
 function setLang(lang) {
   if (lang === 'fr') {
     document.querySelector('h1').textContent = "Bienvenue sur Destructor-XMD";
