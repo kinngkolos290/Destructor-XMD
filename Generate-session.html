@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Générateur de Session - Destructor-XMD</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Générateur de SESSION_ID</h1>
+    <p>Voici votre identifiant de session à insérer dans votre script :</p>
+    <div id="session" class="btn" style="font-family:monospace;"></div>
+    <button onclick="copySession()" class="btn">Copier</button>
+    <br/><br/>
+    <a href="index.html" class="btn">Retour à l'accueil</a>
+  </div>
+
+  <script>
+    function generateSession() {
+      const random = Math.random().toString(36).substring(2, 18)
+      return 'destructor_xmd_' + random
+    }
+
+    const session = generateSession()
+    document.getElementById("session").textContent = session
+
+    function copySession() {
+      navigator.clipboard.writeText(session)
+        .then(() => alert("SESSION_ID copié !"))
+        .catch(() => alert("Erreur lors de la copie."))
+    }
+  </script>
+</body>
+</html>
